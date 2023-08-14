@@ -18,38 +18,7 @@
                     </div>
                     <div class="card-body">
                         <form>
-                            <!-- <div class="container">
 
-                                <div class="row ">
-                                    <div class="form-group col-lg-6">
-                                        <label for="first-name">
-                                            Nama Lengkap
-                                            <span data-required="true" aria-hidden="true"></span>
-                                        </label>
-                                        <input id="first-name" type="text" name="first-name" class="form-control" autocomplete="given-name" required>
-                                    </div>
-                                    <div class="form-group col-lg-6 ">
-                                        <label for="first-name">
-                                            Email
-                                            <span data-required="true" aria-hidden="true"></span>
-                                        </label>
-                                        <input id="first-name" type="text" name="first-name" class="form-control" autocomplete="given-name" required>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group mt-2 ">
-                                    <label for="first-name">
-                                        Nomor Telepon
-                                        <span data-required="true" aria-hidden="true"></span>
-                                    </label>
-                                    <input id="first-name" type="text" name="first-name" class="form-control" autocomplete="given-name" required>
-                                </div>
-
-                                <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
-                                    <button class="btn btn-primary rounded-pill px-5 py-2"> Next</button>
-                                </div>
-                            </div> -->
 
                             <div class="container">
 

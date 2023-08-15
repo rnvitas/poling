@@ -1,15 +1,14 @@
 <script>
-    var span = document.getElementById('request_id');
+    $(document).ready(function() {
+        $('#capres').change(function() {
+            if ($(this).prop('checked', true)) {
+                $('#btn-capres').removeClass('disabled');
+            } else {
+                $('#btn-capres').addClass('disabled');
 
-    function time() {
-        var d = new Date();
-        var formatted = d.toISOString().split('T')[0].replace(/\-/g, '').slice(2, 8) - 0;
-        var s = d.getSeconds();
-        var m = d.getMinutes();
-        var h = d.getHours();
-        span.textContent =
-            formatted + ("0" + h).substr(-2) + ("0" + m).substr(-2) + ("0" + s).substr(-2);
-    }
 
-    setInterval(time, 1000);
+            }
+        });
+    });
 </script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>

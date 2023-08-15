@@ -8,7 +8,6 @@
                         <div class=" rounded-circle px-2 py-2  bg-primary mx-1"></div>
                         <div class=" rounded-circle px-2 py-2  bg-primary  bg-opacity-50 mx-1"></div>
                         <div class=" rounded-circle px-2 py-2  bg-primary bg-opacity-50 mx-1"></div>
-                        <!-- <div class="bg-success p-2 text-dark bg-opacity-50">This is 50% opacity success background</div> -->
 
 
 
@@ -20,7 +19,7 @@
                         <form>
 
 
-                            <div class="container">
+                            <div class="container capres">
 
                                 <h4 class="text-bold text-dark">Pilih Calon Presiden</h4>
 
@@ -35,11 +34,11 @@
                                 </div>
 
                                 <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
-                                    <button class="btn btn-primary rounded-pill px-5 py-2"> Next</button>
+                                    <button class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres"> Next</button>
                                 </div>
                             </div>
 
-                            <div class="container">
+                            <div class="container cawapres hidden">
 
                                 <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden</h4>
 
@@ -94,11 +93,23 @@
         border-radius: 20px;
     }
 
-    .radio-card {
+    .radio-card:hover {
         border: 1px solid #0d6efd;
         padding: 12px 24px;
         border-radius: 10px;
         margin-bottom: 1rem;
+        color: #0d6efd;
+    }
+
+    .radio-card {
+        border: 1px solid grey;
+        padding: 12px 24px;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .hidden {
+        display: none;
     }
 </style>
 

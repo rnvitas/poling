@@ -16,7 +16,8 @@
 
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form id="poll_form">
+                            <input type="hidden" value="" id="id_add" name="id_add" />
 
 
                             <div class="container capres">
@@ -27,6 +28,8 @@
                                     <?php foreach ($capres as $c) {
                                     ?>
                                         <div class="radio-card">
+                                            <!-- <span class="circle"></span> -->
+
                                             <input type="radio" id="capres" name="capres" value="<?php echo ($c->id) ?>">
                                             <label for="capres"><?php echo ($c->capres) ?></label>
                                         </div>
@@ -46,6 +49,7 @@
                                     <?php foreach ($cawapres as $c) {
                                     ?>
                                         <div class="radio-card">
+                                            <!-- <span class="circle"></span> -->
                                             <input type="radio" id="capres" name="capres" value="<?php echo ($c->id) ?>">
                                             <label for="capres"><?php echo ($c->cawapres) ?></label>
                                         </div>
@@ -93,12 +97,15 @@
         border-radius: 20px;
     }
 
+
     .radio-card:hover {
         border: 1px solid #0d6efd;
         padding: 12px 24px;
         border-radius: 10px;
         margin-bottom: 1rem;
         color: #0d6efd;
+
+
     }
 
     .radio-card {
@@ -106,15 +113,83 @@
         padding: 12px 24px;
         border-radius: 10px;
         margin-bottom: 1rem;
+
+    }
+
+    .radio-card.selected {
+        border: 1px solid #0d6efd;
+        padding: 12px 24px;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        color: #0d6efd;
+    }
+
+    input[type="radio"] {
+        height: 1.1rem;
+        width: 1.1rem;
     }
 
     .hidden {
         display: none;
     }
-</style>
 
-<script>
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-</script>
+    /* .radio-card .circle {
+        content: '';
+        background-color: #0d6efd;
+        border-radius: 100%;
+        height: 24px;
+        width: 24px;
+        padding: 5px 5px;
+    } */
+
+    /* .radio-card .circle {
+        height: 19px;
+        width: 19px;
+        display: block;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        margin-right: 10px;
+        position: relative;
+    }
+
+    .radio-card .circle.selected {
+        background: #0d6efd;
+
+    }
+
+    .radio-card .circle::after {
+        content: "";
+        height: 11px;
+        width: 11px;
+        background: #0d6efd;
+        border-radius: inherit;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        display: none;
+
+    }
+
+    .radio-card:hover .circle::after {
+        display: block;
+        background: #ccc;
+    }
+
+    .radio-card.selected {
+        border: 1px solid #0d6efd;
+        color: #0d6efd;
+
+    }
+
+    .radio-card.selected .circle {
+        border: 2px solid #0d6efd;
+
+
+    } */
+
+
+    /* input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+    } */
+</style>

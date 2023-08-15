@@ -5,6 +5,8 @@ class Model extends CI_Model
 
     var $table = 'candidate_pres';
     var $table1 = 'candidate_wapres';
+    var $table_results = 'poll_results';
+
 
 
     public function get_capres()
@@ -24,5 +26,12 @@ class Model extends CI_Model
         // $this->db->where('active', 1);
         // $this->db->order_by('regional', 'ASC');
         return $this->db->get()->result();
+    }
+
+    public function save($data, $where)
+    {
+
+        $this->db->insert($this->table_results, $data, $where);
+        return $this->db->insert_id();
     }
 }

@@ -73,6 +73,8 @@
                                 <div style="float:right;">
                                     <button class="btn btn-outline-primary rounded-pill px-5 py-2  " type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                                     <button class="btn btn-primary rounded-pill px-5 py-2 disabled  " type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button class="btn btn-primary rounded-pill px-5 py-2  hidden" type="submit" id="submit" onclick="save()">Submit</button>
+
                                 </div>
                             </div>
                             <!-- <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4 " id="btn-cawapres">

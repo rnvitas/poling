@@ -13,6 +13,8 @@
 
             card[i].classList.add("selected");
             document.getElementById("nextBtn").classList.remove("disabled");
+            document.getElementById("submit").classList.remove("disabled");
+
 
             for (let k = 0; k < card.length; k++) {
                 card[k].classList.add("selectall");
@@ -37,9 +39,12 @@
             document.getElementById("prevBtn").style.display = "none";
         }
         if (n == (x.length - 2)) {
-            document.getElementById("nextBtn").innerHTML = "Submit";
-            document.getElementById("nextBtn").classList.add("disabled");
-            document.getElementById("nextBtn").addEventListener('click');
+            document.getElementById("nextBtn").style.display = "none";
+            // document.getElementById("nextBtn").classList.add("disabled");
+            document.getElementById("submit").classList.remove("hidden");
+            document.getElementById("submit").classList.add("disabled");
+
+
         } else if (n == (x.length - 1)) {
             document.getElementById("nextBtn").innerHTML = "Finish";
         } else {
@@ -99,5 +104,53 @@
         //... and adds the "active" class on the current step:
         x[n].className += " active";
     }
+
+    function save() {
+
+        var url;
+        var formData;
+        url = "<?php echo site_url('poling/save') ?>";
+        var formData = new FormData($("#poll_form")[0]);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            beforeSend: function() {
+                swal.fire({
+                    icon: 'info',
+                    timer: 3000,
+                    showConfirmButton: false,
+                    title: 'Loading...'
+
+                });
+            },
+            success: function(data) {
+                /* if(!data.status)alert("ho"); */
+                if (!data.status) swal.fire('Gagal menyimpan data', 'error');
+                else {
+                    // document.getElementById('rumahadat').reset();
+                    $('#add_modal').modal('hide');
+                    (JSON.stringify(data));
+                    swal.fire({
+                        customClass: 'slow-animation',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        title: 'Berhasil Menambahkan Konten',
+                        timer: 1500
+                    });
+                    window.location.reload();
+
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                swal.fire('Operation Failed!', errorThrown, 'error');
+            },
+            complete: function() {
+                console.log('Editing job done');
+            }
+        });
+    }
 </script>
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>

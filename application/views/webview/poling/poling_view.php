@@ -5,9 +5,9 @@
                 <div class="card">
                     <div class="card-nav mt-4 d-flex justify-content-center">
 
-                        <div class=" rounded-circle px-2 py-2  bg-primary mx-1"></div>
-                        <div class=" rounded-circle px-2 py-2  bg-primary  bg-opacity-50 mx-1"></div>
-                        <div class=" rounded-circle px-2 py-2  bg-primary bg-opacity-50 mx-1"></div>
+                        <div class="step rounded-circle px-2 py-2  mx-1"></div>
+                        <div class="step rounded-circle px-2 py-2  mx-1"></div>
+                        <div class="step rounded-circle px-2 py-2  mx-1"></div>
 
 
 
@@ -20,7 +20,7 @@
                             <input type="hidden" value="" id="id_add" name="id_add" />
 
 
-                            <div class="container capres">
+                            <div class="container tab">
 
                                 <h4 class="text-bold text-dark">Pilih Calon Presiden</h4>
 
@@ -39,7 +39,7 @@
 
                             </div>
 
-                            <div class="container cawapres hidden">
+                            <div class="container tab ">
 
 
                                 <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden test</h4>
@@ -58,8 +58,22 @@
 
                             </div>
 
+                            <div class="container tab ">
+
+
+                                <h4 class="text-bold text-dark">Selamat anda sudah berhasil memilih!</h4>
+
+
+
+
+                            </div>
+
                             <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
-                                <a class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres" type=""> Next</a>
+                                <!-- <a class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres" type=""> Next</a> -->
+                                <div style="float:right;">
+                                    <button class="btn btn-outline-primary rounded-pill px-5 py-2  " type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                    <button class="btn btn-primary rounded-pill px-5 py-2 disabled  " type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                </div>
                             </div>
                             <!-- <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4 " id="btn-cawapres">
                                 <button class="btn btn-outline-primary rounded-pill px-5 py-2 me-3"> Back</button>
@@ -86,6 +100,10 @@
         background-color: #f1f5f8;
         font-family: 'Poppins';
 
+    }
+
+    .tab {
+        display: none;
     }
 
     .card-nav {
@@ -146,9 +164,12 @@
 
     }
 
-    .radio-card:hover input[type="radio"]::after {
-        /* border: 2px solid #0d6efd; */
+    .step {
+        background: #ccc;
+    }
 
+    .step.active {
+        background: #0d6efd;
     }
 
     .hidden {

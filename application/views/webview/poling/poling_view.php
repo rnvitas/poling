@@ -36,9 +36,7 @@
                                     <?php } ?>
                                 </div>
 
-                                <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
-                                    <button class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres"> Next</button>
-                                </div>
+
                             </div>
 
                             <div class="container cawapres hidden">
@@ -56,12 +54,17 @@
                                     <?php } ?>
                                 </div>
 
-                                <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
-                                    <button class="btn btn-outline-primary rounded-pill px-5 py-2 me-3"> Back</button>
 
-                                    <button class="btn btn-primary rounded-pill px-5 py-2"> Submit</button>
-                                </div>
                             </div>
+
+                            <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
+                                <a class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres" type=""> Next</a>
+                            </div>
+                            <!-- <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4 " id="btn-cawapres">
+                                <button class="btn btn-outline-primary rounded-pill px-5 py-2 me-3"> Back</button>
+
+                                <button class="btn btn-primary rounded-pill px-5 py-2"> Submit</button>
+                            </div> -->
                         </form>
 
 
@@ -127,6 +130,24 @@
     input[type="radio"] {
         height: 1.1rem;
         width: 1.1rem;
+    }
+
+    .input[type="radio"]::after {
+        content: "";
+        height: 11px;
+        width: 11px;
+        background: #0d6efd;
+        border-radius: inherit;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        display: none;
+
+    }
+
+    .radio-card:hover input[type="radio"]::after {
+        /* border: 2px solid #0d6efd; */
+
     }
 
     .hidden {

@@ -22,5 +22,18 @@
 
         });
     }
+
+    const btnNext = document.getElementById("btn-capres");
+    const btnSubmit = document.getElementById("btn-cawpres");
+
+    const formcapres = document.getElementsByClassName("capres");
+    const formcawapres = document.getElementsByClassName("cawapres");
+    btnNext.addEventListener("click", () => {
+
+        formcapres.classList.remove("hidden");
+        formcawapres.classList.add("hidden");
+        btnSubmit.classList.remove("hidden");
+        btnNext.classList.add("hidden");
+    });
 </script>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>

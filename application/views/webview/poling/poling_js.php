@@ -1,20 +1,21 @@
 <script>
-    const options = document.querySelectorAll(".radio-card");
+    const card = document.querySelectorAll(".radio-card");
+    const options = document.querySelectorAll("input[type='radio']");
     for (let i = 0; i < options.length; i++) {
         options[i].addEventListener("click", () => {
             for (let j = 0; j < options.length; j++) {
-                if (options[j].classList.contains("selected")) {
+                if (card[j].classList.contains("selected")) {
 
-                    options[j].classList.remove("selected");
+                    card[j].classList.remove("selected");
 
                 }
             }
 
-            options[i].classList.add("selected");
+            card[i].classList.add("selected");
             document.getElementById("nextBtn").classList.remove("disabled");
 
-            for (let k = 0; k < options.length; k++) {
-                options[k].classList.add("selectall");
+            for (let k = 0; k < card.length; k++) {
+                card[k].classList.add("selectall");
             }
 
 
@@ -38,11 +39,11 @@
         if (n == (x.length - 2)) {
             document.getElementById("nextBtn").innerHTML = "Submit";
             document.getElementById("nextBtn").classList.add("disabled");
+            document.getElementById("nextBtn").addEventListener('click');
         } else if (n == (x.length - 1)) {
             document.getElementById("nextBtn").innerHTML = "Finish";
         } else {
             document.getElementById("nextBtn").innerHTML = "Next";
-
         }
         //... and run a function that will display the correct step indicator:
         fixStepIndicator(n)

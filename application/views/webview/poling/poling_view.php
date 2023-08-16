@@ -49,8 +49,8 @@
                                     ?>
                                         <div class="radio-card">
                                             <!-- <span class="circle"></span> -->
-                                            <input type="radio" id="capres" name="capres" value="<?php echo ($c->id) ?>">
-                                            <label for="capres"><?php echo ($c->cawapres) ?></label>
+                                            <input type="radio" id="cawapres" name="cawapres" value="<?php echo ($c->id) ?>">
+                                            <label for="cawapres"><?php echo ($c->cawapres) ?></label>
                                         </div>
                                     <?php } ?>
                                 </div>

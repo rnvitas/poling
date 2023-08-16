@@ -42,7 +42,7 @@
                             <div class="container cawapres hidden">
 
 
-                                <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden</h4>
+                                <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden test</h4>
 
                                 <div class="form-group col-lg-12 ">
                                     <?php foreach ($cawapres as $c) {

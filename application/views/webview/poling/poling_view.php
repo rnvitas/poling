@@ -7,7 +7,7 @@
 
                         <div class="step rounded-circle px-2 py-2  mx-1"></div>
                         <div class="step rounded-circle px-2 py-2  mx-1"></div>
-                        <div class="step rounded-circle px-2 py-2  mx-1"></div>
+                        <!-- <div class="step rounded-circle px-2 py-2  mx-1"></div> -->
 
 
 
@@ -58,7 +58,7 @@
 
                             </div>
 
-                            <div class="container tab ">
+                            <div class="container tab">
 
 
                                 <h4 class="text-bold text-dark">Selamat anda sudah berhasil memilih!</h4>
@@ -68,15 +68,7 @@
 
                             </div>
 
-                            <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
-                                <!-- <a class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres" type=""> Next</a> -->
-                                <div style="float:right;">
-                                    <button class="btn btn-outline-primary rounded-pill px-5 py-2  " type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                    <button class="btn btn-primary rounded-pill px-5 py-2 disabled  " type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                                    <button class="btn btn-primary rounded-pill px-5 py-2  hidden" type="submit" id="submit" onclick="save()">Submit</button>
 
-                                </div>
-                            </div>
                             <!-- <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4 " id="btn-cawapres">
                                 <button class="btn btn-outline-primary rounded-pill px-5 py-2 me-3"> Back</button>
 
@@ -84,6 +76,15 @@
                             </div> -->
                         </form>
 
+                        <div class="col-lg-12 d-flex justify-content-center mb-3 mt-4">
+                            <!-- <a class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres" type=""> Next</a> -->
+                            <div style="float:right;">
+                                <button class="btn btn-outline-primary rounded-pill px-5 py-2  " type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                <button class="btn btn-primary rounded-pill px-5 py-2 disabled  " type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                <button class="btn btn-primary rounded-pill px-5 py-2  hidden" type="submit" id="submit" onclick="save()">Submit</button>
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>

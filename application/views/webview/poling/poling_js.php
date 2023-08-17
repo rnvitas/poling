@@ -141,8 +141,8 @@
                         icon: 'success',
                         showConfirmButton: true,
                         confirmButtonText: 'Kembali ke Poling',
-                        title: 'Berhasil Memilin Capres dan Cawapres',
-                        timer: 3000,
+                        title: 'Berhasil Memilih Capres dan Cawapres',
+                        // timer: 3000,
                         allowOutsideClick: false
 
                     }).then((result) => {

@@ -1,7 +1,7 @@
 <body>
     <div class="container-fluid">
-        <div class="container d-flex justify-content-center">
-            <div class="col-lg-6">
+        <div class=" d-flex justify-content-center">
+            <div class="container-fluid col-lg-6">
                 <div class="card">
                     <div class="card-nav mt-4 d-flex justify-content-center">
 
@@ -42,7 +42,7 @@
                             <div class="container tab ">
 
 
-                                <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden test</h4>
+                                <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden </h4>
 
                                 <div class="form-group col-lg-12 ">
                                     <?php foreach ($cawapres as $c) {
@@ -123,7 +123,7 @@
     }
 
 
-    .radio-card:hover {
+    /* .radio-card:hover {
         border: 1px solid #0d6efd;
         padding: 12px 24px;
         border-radius: 10px;
@@ -131,13 +131,14 @@
         color: #0d6efd;
 
 
-    }
+    } */
 
     .radio-card {
         border: 1px solid grey;
         padding: 12px 24px;
         border-radius: 10px;
         margin-bottom: 1rem;
+        display: flex;
 
     }
 
@@ -150,9 +151,21 @@
     }
 
     input[type="radio"] {
-        height: 1.1rem;
-        width: 1.1rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        align-items: center !important;
+        /* display: flex; */
+        /* justify-content: left; */
+        margin-right: 0.5rem;
+
     }
+
+    /* .radio-card>input label {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+
+    } */
 
     .input[type="radio"]::after {
         content: "";

@@ -5,11 +5,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Polls extends CI_Controller
 {
 
+
+    function __construct()
+    {
+        parent::__construct();
+
+        $this->load->model('Model', 'poling');
+    }
     public function index()
     {
-        $this->load->model('Model', 'poling');
         $data['capres']   = $this->poling->get_capres();
-
         $data['cawapres']   = $this->poling->get_cawapres();
         $data['content']     = 'webview/poling/poling_view';
         $data['content_js'] = 'webview/poling/poling_js';

@@ -109,7 +109,8 @@
 
         var url;
         var formData;
-        url = "<?php echo site_url('poling/save') ?>";
+        url = "<?php echo site_url('polls/save') ?>";
+        base_url = "<?php base_url('polls') ?>"
         var formData = new FormData($("#poll_form")[0]);
         $.ajax({
             url: url,
@@ -134,15 +135,21 @@
                     // document.getElementById('rumahadat').reset();
                     $('#add_modal').modal('hide');
                     (JSON.stringify(data));
+                    // alert(data);
                     swal.fire({
                         customClass: 'slow-animation',
                         icon: 'success',
-                        showConfirmButton: false,
-                        title: 'Berhasil Menambahkan Konten',
-                        timer: 1500
-                    });
-                    window.location.reload();
+                        showConfirmButton: true,
+                        confirmButtonText: 'Kembali ke Poling',
+                        title: 'Berhasil Memilih Capres dan Cawapres',
+                        // timer: 3000,
+                        allowOutsideClick: false
 
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location = base_url;
+                        }
+                    })
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {

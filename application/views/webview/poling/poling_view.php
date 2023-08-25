@@ -61,7 +61,7 @@
 
 
                                 <div class="d-flex justify-content-center mb-2">
-                                    <h1 class="text-bold" style="color:#ffffff;"><strong> Calon Wakil Presiden</strong></h1>
+                                    <h1 class="text-bold" style="color:#ffffff;"><strong>Pilih Calon Wakil Presiden</strong></h1>
 
 
                                 </div>
@@ -73,9 +73,9 @@
 
                                             <div class="card " id="cardwapres">
                                                 <!-- <span class="circle"></span> -->
-                                                <div class="radio-card">
+                                                <div class="radio-card d-flex justify-content-center">
                                                     <input type="radio" id="cawapres" name="cawapres" value="<?php echo ($c->id) ?>">
-                                                    <label for="cawapres"><?php echo ($c->cawapres) ?></label>
+                                                    <label for="cawapres"><strong><?php echo ($c->cawapres) ?></strong></label>
                                                 </div>
                                                 <div class="d-flex justify-content-center mb-3">
                                                     <img src="<?php echo base_url(); ?>assets/<?php echo $c->image ?>" style="object-fit:contain; width:100px;">

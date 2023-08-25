@@ -1,31 +1,81 @@
 <script>
-    const card = document.querySelectorAll(".radio-card");
-    const options = document.querySelectorAll("input[type='radio']");
+    // const card = document.querySelectorAll(".radio-card");
+    // const options = document.querySelectorAll("input[type='radio']");
+    // for (let i = 0; i < options.length; i++) {
+    //     options[i].addEventListener("click", () => {
+    //         for (let j = 0; j < options.length; j++) {
+    //             if (card[j].classList.contains("selected")) {
+
+    //                 card[j].classList.remove("selected");
+
+    //             }
+    //         }
+
+    //         card[i].classList.add("selected");
+    //         document.getElementById("nextBtn").classList.remove("disabled");
+    //         document.getElementById("submit").classList.remove("disabled");
+
+
+    //         for (let k = 0; k < card.length; k++) {
+    //             card[k].classList.add("selectall");
+    //         }
+
+
+
+
+    //     });
+    // }
+
+
+    const radio = document.querySelectorAll("input[type='radio']");
+    const options = document.querySelectorAll(".card");
     for (let i = 0; i < options.length; i++) {
         options[i].addEventListener("click", () => {
+
             for (let j = 0; j < options.length; j++) {
-                if (card[j].classList.contains("selected")) {
 
-                    card[j].classList.remove("selected");
-
+                if (options[j].classList.contains("selected")) {
+                    options[j].classList.remove("selected");
                 }
+
             }
 
-            card[i].classList.add("selected");
+            // JSON.stringify(check);
+            // alert(check);
+
+
+            options[i].classList.add("selected");
             document.getElementById("nextBtn").classList.remove("disabled");
             document.getElementById("submit").classList.remove("disabled");
 
+            options[i].classList.add("selected");
+            for (let k = 0; k < options.length; k++) {
+                options[k].classList.add("selectall");
+            }
+            $(this).children('input[type="radio"]').prop('checked', true);
 
-            for (let k = 0; k < card.length; k++) {
-                card[k].classList.add("selectall");
+
+            let forVal = options[i].getAttribute("for");
+            let selectInput = document.querySelector("#" + forVal);
+            let getAtt = selectInput.getAttribute("type");
+            if (getAtt == "radio") {
+                selectInput.setAttribute("type", "radio");
+
             }
 
-
-
-
+            // let array = [];
+            // for (let l = 0; l < options.length; l++) {
+            //     if (options[l].classList.contains("selected")) {
+            //         array.push(l);
+            //     }
+            // }
+            // if (array.length == 0) {
+            //     for (let m = 0; m < options.length; m++) {
+            //         options[m].removeAttribute("class");
+            //     }
+            // }
         });
     }
-
     var currentTab = 0; // Current tab is set to be the first tab (0)
     showTab(currentTab); // Display the current tab
     function showTab(n) {
@@ -139,18 +189,24 @@
                     swal.fire({
                         customClass: 'slow-animation',
                         icon: 'success',
-                        showConfirmButton: true,
-                        confirmButtonText: 'Kembali ke Poling',
+                        showConfirmButton: false,
+                        // confirmButtonText: 'Kembali ke Poling',
                         title: 'Berhasil Memilih Capres dan Cawapres',
-                        // timer: 3000,
+                        timer: 5000,
                         allowOutsideClick: false
+                        // window.location = base_url;
 
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location = base_url;
-                        }
                     })
+                    // .then((result) => {
+                    //     if (result.isConfirmed) {
+                    //         window.location = base_url;
+                    //     }
+                    // })
                 }
+                setTimeout(function() {
+                    window.location = base_url;
+                }, 5000);
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 swal.fire('Operation Failed!', errorThrown, 'error');

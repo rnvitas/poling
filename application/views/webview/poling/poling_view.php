@@ -1,20 +1,23 @@
-<body>
+<body style="background-image:url(<?php echo base_url(); ?>assets/bg.jpg)">
+
+    <!-- <div class="justify-content-left " style="margin-top:-2rem;">
+        <img src="<?php echo base_url(); ?>assets/lg_poling.png" width="100%">
+
+    </div> -->
+
     <div class="container-fluid">
-        <div class=" d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             <div class="container-fluid col-lg-6">
-                <div class="card">
+                <div class="">
                     <div class="card-nav mt-4 d-flex justify-content-center">
 
-                        <div class="step rounded-circle px-2 py-2  mx-1"></div>
-                        <div class="step rounded-circle px-2 py-2  mx-1"></div>
-                        <!-- <div class="step rounded-circle px-2 py-2  mx-1"></div> -->
+                        <div class="step rounded-circle px-2 py-2 hidden mx-1"></div>
+                        <div class="step rounded-circle px-2 py-2 hidden mx-1"></div>
 
 
 
                     </div>
-                    <div class="card-title">
 
-                    </div>
                     <div class="card-body">
                         <form id="poll_form">
                             <input type="hidden" value="" id="id_add" name="id_add" />
@@ -22,17 +25,32 @@
 
                             <div class="container tab">
 
-                                <h4 class="text-bold text-dark">Pilih Calon Presiden</h4>
+                                <div class="d-flex justify-content-center mb-2">
+                                    <h1 class="text-bold" style="color:#ffffff;"><strong>Pilih Calon Presiden</strong></h1>
 
-                                <div class="form-group col-lg-12 ">
+
+                                </div>
+
+                                <div class="row">
+
                                     <?php foreach ($capres as $c) {
                                     ?>
-                                        <div class="radio-card">
-                                            <!-- <span class="circle"></span> -->
+                                        <div class=" ccol-xs-12 col-sm-6 col-md-6 col-lg-6 col-6 mb-3 ">
 
-                                            <input type="radio" id="capres" name="capres" value="<?php echo ($c->id) ?>">
-                                            <label for="capres"><?php echo ($c->capres) ?></label>
+                                            <div class="card " id="cardpres">
+                                                <!-- <span class="circle"></span> -->
+                                                <div class="radio-card d-flex justify-content-center">
+                                                    <input type="radio" id="capres" name="capres" value="<?php echo ($c->id) ?>">
+                                                    <label for="capres"><strong><?php echo ($c->capres) ?></strong></label>
+                                                </div>
+                                                <div class="d-flex justify-content-center mb-3">
+                                                    <img src="<?php echo base_url(); ?>assets/<?php echo $c->image ?>" style="object-fit:contain; width:100px;">
+                                                </div>
+                                            </div>
+
                                         </div>
+
+
                                     <?php } ?>
                                 </div>
 
@@ -42,18 +60,34 @@
                             <div class="container tab ">
 
 
-                                <h4 class="text-bold text-dark">Pilih Calon Wakil Presiden </h4>
+                                <div class="d-flex justify-content-center mb-2">
+                                    <h1 class="text-bold" style="color:#ffffff;"><strong> Calon Wakil Presiden</strong></h1>
 
-                                <div class="form-group col-lg-12 ">
+
+                                </div>
+                                <div class="row">
+
                                     <?php foreach ($cawapres as $c) {
                                     ?>
-                                        <div class="radio-card">
-                                            <!-- <span class="circle"></span> -->
-                                            <input type="radio" id="cawapres" name="cawapres" value="<?php echo ($c->id) ?>">
-                                            <label for="cawapres"><?php echo ($c->cawapres) ?></label>
+                                        <div class=" ccol-xs-12 col-sm-6 col-md-6 col-lg-6 col-6 mb-3 ">
+
+                                            <div class="card " id="cardwapres">
+                                                <!-- <span class="circle"></span> -->
+                                                <div class="radio-card">
+                                                    <input type="radio" id="cawapres" name="cawapres" value="<?php echo ($c->id) ?>">
+                                                    <label for="cawapres"><?php echo ($c->cawapres) ?></label>
+                                                </div>
+                                                <div class="d-flex justify-content-center mb-3">
+                                                    <img src="<?php echo base_url(); ?>assets/<?php echo $c->image ?>" style="object-fit:contain; width:100px;">
+                                                </div>
+                                            </div>
+
                                         </div>
+
+
                                     <?php } ?>
                                 </div>
+
 
 
                             </div>
@@ -80,8 +114,8 @@
                             <!-- <a class="btn btn-primary rounded-pill px-5 py-2 disabled " id="btn-capres" type=""> Next</a> -->
                             <div style="float:right;">
                                 <button class="btn btn-outline-primary rounded-pill px-5 py-2  " type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                <button class="btn btn-primary rounded-pill px-5 py-2 disabled  " type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                                <button class="btn btn-primary rounded-pill px-5 py-2  hidden" type="submit" id="submit" onclick="save()">Submit</button>
+                                <button class="btn btn-warning btn-lg rounded-pill px-5 py-2 disabled  " type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                <button class="btn btn-warning btn-lg rounded-pill px-5 py-2  hidden" type="submit" id="submit" onclick="save()">Submit</button>
 
                             </div>
                         </div>
@@ -114,14 +148,56 @@
     }
 
     .card {
-        border-radius: 20px;
-        border: none;
+        border-radius: 10px;
+        border: 5px rgba(243, 168, 96, .5);
+        /* background-color: #f3a860; */
+        /* backdrop-filter: blur(90px); */
+        /* opacity: 0.2; */
+        /* backdrop-filter: opacity(80%); */
+        background: rgba(243, 168, 96, .5);
     }
+
+    #cardpres::after {
+        background-image: url('assets/lg_poling.png');
+        background-size: 150px 80px;
+        object-fit: contain;
+        width: 150px;
+        height: 80px;
+        /* top: 3rem; */
+        bottom: 0px;
+        display: inline-block;
+        position: absolute;
+        content: "";
+
+    }
+
+    #cardcawapres::after {
+        background-image: url('assets/lg_poling.png');
+        background-size: 100px 60px;
+        object-fit: contain;
+        width: 200px;
+        height: 60px;
+        /* top: 3rem; */
+        bottom: 0px;
+        display: inline-block;
+        position: absolute;
+        content: "";
+
+    }
+
 
     .form-control {
         border-radius: 20px;
     }
 
+    .btn-warning {
+        color: #ffffff !important;
+        background-color: #f3a860 !important;
+    }
+
+    .card.selected {
+        background-color: #f3a860;
+    }
 
     /* .radio-card:hover {
         border: 1px solid #0d6efd;
@@ -133,7 +209,7 @@
 
     } */
 
-    .radio-card {
+    /* .radio-card {
         border: 1px solid grey;
         padding: 12px 24px;
         border-radius: 10px;
@@ -148,6 +224,22 @@
         border-radius: 10px;
         margin-bottom: 1rem;
         color: #0d6efd;
+    } */
+
+    .radio-card {
+        /* border: 1px solid grey; */
+        padding: 12px 12px;
+        border-radius: 10px;
+        /* margin-bottom: 1rem; */
+        display: flex;
+        color: white;
+
+    }
+
+
+    .card.selected {
+        color: #ffffff;
+        background-color: #f3a860;
     }
 
     input[type="radio"] {
@@ -247,8 +339,8 @@
     } */
 
 
-    /* input[type="radio"],
+    input[type="radio"],
     input[type="checkbox"] {
         display: none;
-    } */
+    }
 </style>

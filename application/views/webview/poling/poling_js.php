@@ -52,14 +52,17 @@
             for (let k = 0; k < options.length; k++) {
                 options[k].classList.add("selectall");
             }
-            $(this).children('input[type="radio"]').prop('checked', true);
+            // $(this).children('input[type="radio"]').prop('checked', true);
 
 
             let forVal = options[i].getAttribute("for");
             let selectInput = document.querySelector("#" + forVal);
             let getAtt = selectInput.getAttribute("type");
             if (getAtt == "radio") {
-                selectInput.setAttribute("type", "radio");
+                var radio = selectInput.setAttribute("type", "radio");
+                // $(this).children('input[type="radio"]').prop('checked', true);
+                radio.prop('checked', true);
+
 
             }
 

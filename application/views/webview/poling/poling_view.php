@@ -171,12 +171,12 @@
 
     }
 
-    #cardcawapres::after {
+    #cardwapres::after {
         background-image: url('assets/lg_poling.png');
-        background-size: 100px 60px;
+        background-size: 150px 80px;
         object-fit: contain;
-        width: 200px;
-        height: 60px;
+        width: 150px;
+        height: 80px;
         /* top: 3rem; */
         bottom: 0px;
         display: inline-block;
